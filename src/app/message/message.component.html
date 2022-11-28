@@ -1,0 +1,14 @@
+<div class="pb-2" *ngIf="messageService.messages.length" >
+  <h2>Messages</h2>
+  <ul class="list-group m-2">
+    <li class="list-group-item"
+      *ngFor="let message of messageService.messages" >
+      {{message}}
+    </li>
+  </ul>
+  <button type="button" class="clear btn btn-warning"
+          (click)="messageService.clear()"
+  >
+    Clear messages
+  </button>
+</div>
