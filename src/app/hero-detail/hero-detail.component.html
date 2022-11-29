@@ -1,9 +1,27 @@
-<div *ngIf="hero">
-  <h2>{{hero.name | uppercase}} Details</h2>
-  <div>id: {{hero.id}}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-sm">
+      <div class="card">
+        <div *ngIf="hero" class="card-body">
+          <h2 class="card-title">{{hero.name | uppercase}}</h2>
+
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Hero ID</td>
+                <td>{{hero.id}}</td>
+              </tr>
+              <tr>
+                <td>Hero name:</td>
+                <td><input id="hero-name" class="form-control" [(ngModel)]="hero.name" placeholder="name"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="width: 100%" class="d-flex justify-content-end">
+            <button class="btn btn-secondary" (click)="goBack()"><b>Go back</b></button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <button type="button btn btn-primary" (click)="goBack()">go back</button>
 </div>
